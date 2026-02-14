@@ -4,9 +4,13 @@
 
 Este instrumento virtual combina a performance da linguagem C++ com uma biblioteca de sons meticulosamente gravada, oferecendo dinâmica e expressividade comparáveis a softwares comerciais de ponta.
 
-![](./docs/screenshots.png)
-
-![](./docs/mixer.png)
+<p align="center">
+  <img src="./docs/screenshots.png" alt="screenshots">
+  <br><br>
+  <img src="./docs/mixer.png" alt="mixer">
+  <br><br>
+  <img src="./docs/output.png" alt="output">
+</p>
 
 ## Funcionalidades
 
