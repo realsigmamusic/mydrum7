@@ -7,9 +7,7 @@ Este instrumento virtual combina a performance da linguagem C++ com uma bibliote
 <p align="center">
   <img src="./docs/screenshots.png" alt="screenshots">
   <br><br>
-  <img src="./docs/mixer.png" alt="mixer">
-  <br><br>
-  <img src="./docs/output.png" alt="output">
+  <img src="./docs/mixer.png" alt="mixer">>
 </p>
 
 ## Funcionalidades
@@ -18,6 +16,10 @@ Este instrumento virtual combina a performance da linguagem C++ com uma bibliote
 *   **Round Robin (RR):** Sistema inteligente que alterna entre diferentes amostras para a mesma nota e intensidade, eliminando o efeito robótico ("metralhadora") em repetições rápidas.
 *   **Saídas Múltiplas (Multi-Output):** O plugin oferece 12 canais de áudio independentes, permitindo que você mixe o Bumbo, Caixa, Tons e Overheads em faixas separadas na sua DAW, exatamente como faria com uma gravação de bateria real.
 *   **Motor de Hi-Hat Avançado:** Inclui grupos de "Choke" para cortar o som do chimbal aberto quando o pedal é pressionado, garantindo uma performance autêntica.
+
+<p align="center">
+  <img src="./docs/output.png" alt="output">
+</p>
 
 ## Instalação
 
