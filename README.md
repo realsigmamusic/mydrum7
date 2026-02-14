@@ -4,6 +4,10 @@
 
 Este instrumento virtual combina a performance da linguagem C++ com uma biblioteca de sons meticulosamente gravada, oferecendo dinâmica e expressividade comparáveis a softwares comerciais de ponta.
 
+![](./docs/screenshots.png)
+
+![](./docs/mixer.png)
+
 ## Funcionalidades
 
 *   **Dinâmica Realista:** Múltiplas camadas de velocidade (Velocity Layers) para cada peça da bateria. O timbre muda naturalmente dependendo da força com que a nota é tocada.
@@ -66,7 +70,7 @@ O MyDrum7 segue um mapeamento intuitivo, compatível com a maioria dos controlad
 
 Este projeto foi construído sobre ombros de gigantes, utilizando tecnologias open-source de ponta para áudio.
 
-*   **Samples:** A alma deste plugin são as amostras de áudio incríveis fornecidas por [**Tchackpoum**](https://www.tchackpoum.com/). Agradecemos por disponibilizarem gravações de bateria com tanta qualidade e naturalidade.
+*   **Samples:** A alma deste plugin são as amostras de áudio incríveis fornecidas por [**Tchackpoum**](https://www.tchackpoum.com/). 
 *   **Tecnologias:**
     *   **LV2:** O padrão aberto para plugins de áudio no Linux.
     *   **C++:** Para máxima performance e baixa latência.
