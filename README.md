@@ -4,9 +4,9 @@
 ![Format](https://img.shields.io/badge/format-LV2-orange)
 ![License](https://img.shields.io/badge/license-GPLv3-blue)
 
-**MyDrum7** é um plugin de bateria acústica virtual de alta fidelidade no formato **LV2**. Projetado para produtores e músicos que buscam uma sonoridade *orgânica e realista* em suas produções no Linux.
+**MyDrum7** não é apenas mais um plugin. É uma resposta à escassez de instrumentos virtuais acústicos de qualidade nativos para o nosso sistema.
 
-Este instrumento virtual combina a performance da linguagem C++ com uma biblioteca de sons meticulosamente gravada, oferecendo dinâmica e expressividade comparáveis a softwares comerciais de ponta.
+Projetado para produtores e músicos que, assim como eu, estão cansados de depender de "pontes", emuladores e softwares instáveis para conseguir um som de bateria decente. MyDrum7 é Linux puro, código eficiente e som orgânico.
 
 <p align="center">
   <img src="./docs/screenshot.png" alt="MyDrum7 screenshot on Reaper">
@@ -16,12 +16,19 @@ Este instrumento virtual combina a performance da linguagem C++ com uma bibliote
   <img src="./docs/screenshot-ardour.png" alt="MyDrum7 screenshot on Ardour">
 </p>
 
-## Funcionalidades
+Este projeto nasceu de uma revolta pessoal. Como usuário de Linux, eu estava frustrado com a falta de opções nativas que entregassem realismo sem exigir configurações complexas de Wine ou bridges VST que "quebram" no meio da sessão.
 
-* **Dinâmica Realista:** Múltiplas camadas de velocidade (*Velocity Layers*) para cada peça da bateria. O timbre muda naturalmente dependendo da força com que a nota é tocada.
-* **Round Robin (RR):** Sistema inteligente que alterna entre diferentes amostras para a mesma nota e intensidade, eliminando o efeito robótico ("metralhadora") em repetições rápidas.
-* **Saídas Múltiplas (Multi-Output):** O plugin oferece **12 canais de áudio independentes**, permitindo que você mixe o Bumbo, Caixa, Tons e Overheads em faixas separadas na sua DAW, exatamente como faria com uma gravação de bateria real.
-* **Motor de Hi-Hat Avançado:** Inclui grupos de "Choke" para cortar o som do chimbal aberto quando o pedal é pressionado, garantindo uma performance autêntica.
+Nós temos o melhor Kernel, o melhor sistema de arquivos e a melhor comunidade. Merecemos instrumentos à altura.
+
+O MyDrum7 foi escrito em C++ moderno para rodar nativamente no seu Arch, Debian, Fedora ou Ubuntu, extraindo a máxima performance da sua máquina sem "camadas de tradução".
+
+## Funcionalidades "Sem Gambiarras"
+
+* **100% Nativo:** Esqueça o Wine. Esqueça o yabridge. Instale e toque.
+* **Dinâmica Realista:** Múltiplas camadas de velocidade *(Velocity Layers)* para cada peça. O timbre muda organicamente, não apenas o volume.
+* Anti-Metralhadora **(Round Robin):** Sistema inteligente que alterna amostras para evitar aquele som robótico e artificial em repetições rápidas.
+* **Multicanal Real** (12 Saídas): Mixagem profissional. Jogue o Bumbo no canal 1, a Caixa no 3 e os Overheads no 11-12. Processe cada peça com seus plugins de EQ e compressão favoritos na DAW.
+* **Motor de Hi-Hat:** Grupos de "Choke" implementados via código para cortar o som do chimbal aberto instantaneamente ao pisar no pedal.
 
 <p align="center">
   <img src="./docs/build-routing-confirmation.png" alt="build routing confirmation">
@@ -75,3 +82,6 @@ Este projeto foi construído sobre ombros de gigantes, utilizando tecnologias op
     * **LV2:** O padrão aberto para plugins de áudio no Linux.
     * **C++:** Utilizado para máxima performance e baixa latência no processamento de sinal (DSP).
     * **libsndfile:** Para leitura e decodificação de áudio de alta fidelidade.
+
+---
+*Desenvolvido com amor, ~~ódio~~, e café no Arch Linux.* 🐧
