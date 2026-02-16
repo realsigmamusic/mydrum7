@@ -5,9 +5,9 @@
 Este instrumento virtual combina a performance da linguagem C++ com uma biblioteca de sons meticulosamente gravada, oferecendo dinâmica e expressividade comparáveis a softwares comerciais de ponta.
 
 <p align="center">
-  <img src="./docs/screenshots.png" alt="screenshots">
-  <br><br>
-  <img src="./docs/mixer.png" alt="mixer">>
+  <img src="./docs/screenshot.png" alt="screenshot">
+  <br>
+  <img src="./docs/mixer.png" alt="mixer">
 </p>
 
 ## Funcionalidades
@@ -18,7 +18,9 @@ Este instrumento virtual combina a performance da linguagem C++ com uma bibliote
 *   **Motor de Hi-Hat Avançado:** Inclui grupos de "Choke" para cortar o som do chimbal aberto quando o pedal é pressionado, garantindo uma performance autêntica.
 
 <p align="center">
-  <img src="./docs/output.png" alt="output">
+  <img src="./docs/build-routing-confirmation.png" alt="build routing confirmation">
+  <br>
+  <img src="./docs/output.png" alt="outputs">
 </p>
 
 ## Instalação
