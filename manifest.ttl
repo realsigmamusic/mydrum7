@@ -1,7 +1,13 @@
 @prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ui:   <http://lv2plug.in/ns/extensions/ui#> .
 
 <http://realsigmamusic.com/plugins/mydrum7>
-	a lv2:Plugin ;
-	lv2:binary <mydrum7.so> ;
-	rdfs:seeAlso <mydrum7.ttl> .
+    a lv2:Plugin ;
+    lv2:binary <mydrum7.so> ;
+    rdfs:seeAlso <mydrum7.ttl> .
+
+<http://realsigmamusic.com/plugins/mydrum7#ui>
+    a ui:X11UI ;
+    lv2:binary <mydrum7_ui.so> ;
+    rdfs:seeAlso <mydrum7.ttl> .

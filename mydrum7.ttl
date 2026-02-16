@@ -5,12 +5,21 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix doap:  <http://usefulinc.com/ns/doap#> .
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix ui:    <http://lv2plug.in/ns/extensions/ui#> .
+
+<http://realsigmamusic.com/plugins/mydrum7#ui>
+    a ui:X11UI ;
+    ui:requiredFeature ui:idleInterface , ui:parent ;
+    lv2:extensionData ui:idleInterface ;
+    ui:binary <mydrum7_ui.so> .
+
 
 <http://realsigmamusic.com/plugins/mydrum7>
 	a lv2:Plugin , lv2:InstrumentPlugin ;
-	doap:name "My Drum 7" ;
+	doap:name "MyDrum7" ;
 	doap:license <https://opensource.org/licenses/MIT> ;
 	doap:maintainer [ foaf:name "Real Sigma Music" ] ;
+	ui:ui <http://realsigmamusic.com/plugins/mydrum7#ui> ;
 	lv2:requiredFeature urid:map ;
 	lv2:optionalFeature lv2:hardRTCapable ;
 	

@@ -1,32 +1,40 @@
 CXXFLAGS += -fPIC -O2 -std=c++17
 LDFLAGS += -shared -lsndfile
+
+# Flags para a interface gráfica (UI)
+UI_FLAGS = $(shell pkg-config --cflags --libs cairo x11)
+
 PLUGIN = mydrum7
 PAK = sounds.pak
 BUNDLE = $(PLUGIN).lv2
 
-all:
+all: dsp ui
+	@echo "Plugin completo compilado: $(BUNDLE)"
+
+dsp:
 	$(CXX) -o $(PLUGIN).so main.cpp $(CXXFLAGS) $(LDFLAGS)
-	@echo "Plugin LV2 compilado: $(BUNDLE)"
+
+ui:
+	# Compila a interface visual linkando Cairo e X11
+	$(CXX) -o $(PLUGIN)_ui.so ui.cpp $(CXXFLAGS) -shared -fPIC $(UI_FLAGS)
 
 pak:
-	@echo "Empacotando samples..."
 	@mkdir -p build
 	$(CXX) -std=c++17 -O2 tools/soundmaker.cpp -o build/soundmaker
 	./build/soundmaker samples $(PAK)
-	@echo "$(PAK) gerado com sucesso"
 
 install:
-	@echo "Instalando plugin LV2..."
 	mkdir -p ~/.lv2/$(BUNDLE)
-	cp -r $(PLUGIN).so ~/.lv2/$(BUNDLE)/
+	cp $(PLUGIN).so ~/.lv2/$(BUNDLE)/
+	cp $(PLUGIN)_ui.so ~/.lv2/$(BUNDLE)/
 	cp manifest.ttl ~/.lv2/$(BUNDLE)/
 	cp mydrum7.ttl ~/.lv2/$(BUNDLE)/
+	cp wallpaper.png ~/.lv2/$(BUNDLE)/
 	cp $(PAK) ~/.lv2/$(BUNDLE)/
-	@echo "LV2 plugin instalado em ~/.lv2/$(BUNDLE)/"
+	@echo "Instalado em ~/.lv2/$(BUNDLE)/"
 
 clean:
-	rm -f $(PLUGIN).so
-	rm -f $(PAK)
+	rm -f *.so $(PAK)
 
 uninstall:
 	rm -rf ~/.lv2/$(BUNDLE)
