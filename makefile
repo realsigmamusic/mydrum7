@@ -32,7 +32,6 @@ install:
 	cp ui.so ~/.lv2/$(BUNDLE)/
 	cp manifest.ttl ~/.lv2/$(BUNDLE)/
 	cp mydrum7.ttl ~/.lv2/$(BUNDLE)/
-	# cp wallpaper.png ~/.lv2/$(BUNDLE)/  <-- Removed, now embedded
 	cp $(PAK) ~/.lv2/$(BUNDLE)/
 	@echo "Instalado em ~/.lv2/$(BUNDLE)/"
 
