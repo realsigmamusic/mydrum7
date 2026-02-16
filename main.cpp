@@ -558,11 +558,6 @@ static void run(LV2_Handle instance, uint32_t n_samples) {
 							const Sample* sample = group.getSampleForVelocity(vel);
 							if (!sample || sample->dataL.empty()) continue;
 
-							// Voice Stealing: remove a mais antiga se estiver cheio
-							if (self->voices.size() >= MAX_VOICES) {
-								self->voices.erase(self->voices.begin());
-							}
-
 							Voice v;
 							v.sample = sample;
 							v.pos = 0;
@@ -570,8 +565,13 @@ static void run(LV2_Handle instance, uint32_t n_samples) {
 							v.output = group.output;
 							v.chokeGroup = group.chokeGroup;
 							v.velocity = 1.0f;
-
-							self->voices.push_back(v);
+							
+							// Otimização: Sobrescreve em vez de erase/push se cheio
+							if (self->voices.size() >= MAX_VOICES) {
+								self->voices[0] = v; // Rouba um slot (ordem não importa pois render usa swap)
+							} else {
+								self->voices.push_back(v);
+							}
 						}
 					}
 				}
