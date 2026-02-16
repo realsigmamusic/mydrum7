@@ -564,7 +564,10 @@ static void run(LV2_Handle instance, uint32_t n_samples) {
 							v.length = (uint32_t)sample->dataL.size();
 							v.output = group.output;
 							v.chokeGroup = group.chokeGroup;
-							v.velocity = 1.0f;
+							// v.velocity = 1.0f;
+							float norm = (float)vel / 127.0f;
+							v.velocity = 0.4f + (0.6f * norm); // (60% fixo, 40% variável).
+							// v.velocity = 0.2f + (0.8f * norm); (20% fixo, 80% variável).
 							
 							// Otimização: Sobrescreve em vez de erase/push se cheio
 							if (self->voices.size() >= MAX_VOICES) {
