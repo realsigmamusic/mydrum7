@@ -25,6 +25,24 @@ typedef struct {
     bool quit = false;
 } MyUI;
 
+#include "wallpaper.h"
+
+struct PngReaderState {
+    const unsigned char* data;
+    unsigned int length;
+    unsigned int offset;
+};
+
+static cairo_status_t read_png_from_memory(void *closure, unsigned char *data, unsigned int length) {
+    PngReaderState *state = (PngReaderState *)closure;
+    if (state->offset + length > state->length) {
+        return CAIRO_STATUS_READ_ERROR;
+    }
+    memcpy(data, state->data + state->offset, length);
+    state->offset += length;
+    return CAIRO_STATUS_SUCCESS;
+}
+
 static LV2UI_Handle instantiate(const LV2UI_Descriptor* descriptor,
                                 const char* plugin_uri,
                                 const char* bundle_path,
@@ -69,18 +87,15 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor* descriptor,
 
     Window parent = (Window)parentXwindow;
 
-    // 2. Tentar carregar a imagem
-    if (bundle_path) {
-        std::string path = bundle_path;
-        if (path.find("file://") == 0) {
-            path = path.substr(7);
-        }
-        std::string img_path = path + "/wallpaper.png";
-        
-        ui->background = cairo_image_surface_create_from_png(img_path.c_str());
-        if (cairo_surface_status(ui->background) != CAIRO_STATUS_SUCCESS) {
-            std::cerr << "[MyDrum7 UI] Error: Failed to load image from " << img_path << std::endl;
-        }
+    // 2. Carregar imagem da memória (Embutido no binário)
+    PngReaderState state = { wallpaper_png, wallpaper_png_len, 0 };
+    ui->background = cairo_image_surface_create_from_png_stream(
+        read_png_from_memory, 
+        &state
+    );
+    
+    if (cairo_surface_status(ui->background) != CAIRO_STATUS_SUCCESS) {
+        std::cerr << "[MyDrum7 UI] Error: Failed to load built-in wallpaper." << std::endl;
     }
 
     // 3. Criar a janela usando XCreateWindow para garantir match de Visual/Depth

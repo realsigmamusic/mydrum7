@@ -14,9 +14,12 @@ all: dsp ui
 dsp:
 	$(CXX) -o $(PLUGIN).so main.cpp $(CXXFLAGS) $(LDFLAGS)
 
-ui:
+ui: wallpaper.h
 	# Compila a interface visual linkando Cairo e X11
 	$(CXX) -o ui.so ui.cpp $(CXXFLAGS) -shared -fPIC $(UI_FLAGS)
+
+wallpaper.h: wallpaper.png
+	xxd -i wallpaper.png > wallpaper.h
 
 pak:
 	@mkdir -p build
@@ -29,12 +32,12 @@ install:
 	cp ui.so ~/.lv2/$(BUNDLE)/
 	cp manifest.ttl ~/.lv2/$(BUNDLE)/
 	cp mydrum7.ttl ~/.lv2/$(BUNDLE)/
-	cp wallpaper.png ~/.lv2/$(BUNDLE)/
+	# cp wallpaper.png ~/.lv2/$(BUNDLE)/  <-- Removed, now embedded
 	cp $(PAK) ~/.lv2/$(BUNDLE)/
 	@echo "Instalado em ~/.lv2/$(BUNDLE)/"
 
 clean:
-	rm -f *.so $(PAK)
+	rm -f *.so $(PAK) wallpaper.h
 
 uninstall:
 	rm -rf ~/.lv2/$(BUNDLE)
