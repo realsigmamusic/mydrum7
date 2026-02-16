@@ -18,7 +18,7 @@
 
 #define MYDRUM7_URI "http://realsigmamusic.com/plugins/mydrum7"
 #define NUM_OUTPUTS 12
-#define MAX_VOICES 64 // 8 16 32 64 128
+#define MAX_VOICES 128 // 8 16 32 64 128
 
 // Port indices
 enum {
