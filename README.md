@@ -9,9 +9,11 @@
 Este instrumento virtual combina a performance da linguagem C++ com uma biblioteca de sons meticulosamente gravada, oferecendo dinâmica e expressividade comparáveis a softwares comerciais de ponta.
 
 <p align="center">
-  <img src="./docs/screenshot.png" alt="MyDrum7 screenshot">
+  <img src="./docs/screenshot.png" alt="MyDrum7 screenshot on Reaper">
   <br>
   <img src="./docs/mixer.png" alt="Mixer View">
+  <br>
+  <img src="./docs/screenshot-ardour.png" alt="MyDrum7 screenshot on Ardour">
 </p>
 
 ## Funcionalidades
@@ -46,19 +48,19 @@ Este instrumento virtual combina a performance da linguagem C++ com uma bibliote
 
 Para obter a melhor mixagem, roteie as saídas do plugin para trilhas de áudio mono/estéreo na sua DAW. O plugin expõe 12 portas de saída:
 
-| Porta | Peça / Microfone | Descrição |
-| :---: | :--- | :--- |
-| **1** | **Kick In** | Microfone interno do Bumbo (Ataque/Click) |
-| **2** | **Kick Out** | Microfone externo do Bumbo (Peso/Sub) |
-| **3** | **Snare Top** | Microfone superior da Caixa |
-| **4** | **Snare Bottom** | Microfone da esteira da Caixa |
-| **5** | **Hi-Hat** | Microfone direto do Chimbal |
-| **6** | **Rack Tom 1** | Tom Agudo |
-| **7** | **Rack Tom 2** | Tom Médio |
-| **8** | **Rack Tom 3** | Tom Grave |
-| **9** | **Floor Tom 1** | Surdo 1 |
-| **10** | **Floor Tom 2** | Surdo 2 |
-| **11-12** | **Overheads** | Microfones de ambiente (Par Estéreo L/R) |
+| Porta     | Peça / Microfone | Descrição                                 |
+| --------: | :--------------- | :---------------------------------------- |
+| **1**     | **Kick In**      | Microfone interno do Bumbo (Ataque/Click) |
+| **2**     | **Kick Out**     | Microfone externo do Bumbo (Peso/Sub)     |
+| **3**     | **Snare Top**    | Microfone superior da Caixa               |
+| **4**     | **Snare Bottom** | Microfone da esteira da Caixa             |
+| **5**     | **Hi-Hat**       | Microfone direto do Chimbal               |
+| **6**     | **Rack Tom 1**   | Tom Agudo                                 |
+| **7**     | **Rack Tom 2**   | Tom Médio                                 |
+| **8**     | **Rack Tom 3**   | Tom Grave                                 |
+| **9**     | **Floor Tom 1**  | Surdo 1                                   |
+| **10**    | **Floor Tom 2**  | Surdo 2                                   |
+| **11-12** | **Overheads**    | Microfones de ambiente (Par Estéreo L/R)  |
 
 ## Mapa MIDI
 
