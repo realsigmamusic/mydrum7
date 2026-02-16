@@ -9,5 +9,5 @@
 
 <http://realsigmamusic.com/plugins/mydrum7#ui>
     a ui:X11UI ;
-    lv2:binary <mydrum7_ui.so> ;
+    lv2:binary <ui.so> ;
     rdfs:seeAlso <mydrum7.ttl> .

@@ -16,7 +16,7 @@ dsp:
 
 ui:
 	# Compila a interface visual linkando Cairo e X11
-	$(CXX) -o $(PLUGIN)_ui.so ui.cpp $(CXXFLAGS) -shared -fPIC $(UI_FLAGS)
+	$(CXX) -o ui.so ui.cpp $(CXXFLAGS) -shared -fPIC $(UI_FLAGS)
 
 pak:
 	@mkdir -p build
@@ -26,7 +26,7 @@ pak:
 install:
 	mkdir -p ~/.lv2/$(BUNDLE)
 	cp $(PLUGIN).so ~/.lv2/$(BUNDLE)/
-	cp $(PLUGIN)_ui.so ~/.lv2/$(BUNDLE)/
+	cp ui.so ~/.lv2/$(BUNDLE)/
 	cp manifest.ttl ~/.lv2/$(BUNDLE)/
 	cp mydrum7.ttl ~/.lv2/$(BUNDLE)/
 	cp wallpaper.png ~/.lv2/$(BUNDLE)/

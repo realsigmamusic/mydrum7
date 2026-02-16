@@ -11,7 +11,7 @@
     a ui:X11UI ;
     ui:requiredFeature ui:idleInterface , ui:parent ;
     lv2:extensionData ui:idleInterface ;
-    ui:binary <mydrum7_ui.so> .
+    ui:binary <ui.so> .
 
 
 <http://realsigmamusic.com/plugins/mydrum7>
