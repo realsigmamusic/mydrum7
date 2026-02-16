@@ -18,7 +18,7 @@
 
 #define MYDRUM7_URI "http://realsigmamusic.com/plugins/mydrum7"
 #define NUM_OUTPUTS 12
-#define MAX_VOICES 128
+#define MAX_VOICES 64 // 8 16 32 64 128
 
 // Port indices
 enum {
@@ -569,9 +569,17 @@ static void run(LV2_Handle instance, uint32_t n_samples) {
 							v.velocity = 0.4f + (0.6f * norm); // (60% fixo, 40% variável).
 							// v.velocity = 0.2f + (0.8f * norm); (20% fixo, 80% variável).
 							
-							// Otimização: Sobrescreve em vez de erase/push se cheio
+							// Voice Stealing Inteligente: Rouba a voz que já tocou por mais tempo (maior pos)
 							if (self->voices.size() >= MAX_VOICES) {
-								self->voices[0] = v; // Rouba um slot (ordem não importa pois render usa swap)
+								size_t oldest_idx = 0;
+								uint32_t max_pos = 0;
+								for (size_t i = 0; i < self->voices.size(); ++i) {
+									if (self->voices[i].pos > max_pos) {
+										max_pos = self->voices[i].pos;
+										oldest_idx = i;
+									}
+								}
+								self->voices[oldest_idx] = v;
 							} else {
 								self->voices.push_back(v);
 							}
