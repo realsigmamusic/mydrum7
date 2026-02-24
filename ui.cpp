@@ -16,7 +16,7 @@
 typedef struct {
     LV2UI_Write_Function write = nullptr;
     LV2UI_Controller     controller = nullptr;
-    
+
     Display* display = nullptr;
     Window   window = 0;
     cairo_surface_t* background = nullptr;
@@ -57,7 +57,7 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor* descriptor,
     }
     ui->write = write_function;
     ui->controller = controller;
-    
+
     // 1. Encontrar a janela Pai (Host)
     void* parentXwindow = NULL;
     for (int i = 0; features[i]; ++i) {
@@ -93,7 +93,7 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor* descriptor,
         read_png_from_memory, 
         &state
     );
-    
+
     if (cairo_surface_status(ui->background) != CAIRO_STATUS_SUCCESS) {
         std::cerr << "[MyDrum7 UI] Error: Failed to load built-in wallpaper." << std::endl;
     }
@@ -101,7 +101,7 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor* descriptor,
     // 3. Criar a janela usando XCreateWindow para garantir match de Visual/Depth
     XSetWindowAttributes attrs;
     unsigned long mask = CWBackPixel | CWBorderPixel | CWEventMask;
-    
+
     // Inherit from parent (which usually implies same Visual/Depth)
     attrs.background_pixel = 0; // Black
     attrs.border_pixel = 0;
@@ -131,11 +131,11 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor* descriptor,
 
     XMapWindow(ui->display, ui->window);
     XFlush(ui->display);
-    
+
     // FORCE an initial Expose event
     XClearArea(ui->display, ui->window, 0, 0, 0, 0, True);
     XFlush(ui->display);
-    
+
     *widget = (LV2UI_Widget)ui->window;
     return (LV2UI_Handle)ui;
 }
@@ -150,7 +150,7 @@ static void cleanup(LV2UI_Handle handle) {
 
 static int ui_idle(LV2UI_Handle handle) {
     MyUI* ui = (MyUI*)handle;
-    
+
     if (ui->quit) {
         return 1; // Close UI
     }
@@ -161,11 +161,11 @@ static int ui_idle(LV2UI_Handle handle) {
     while (XPending(ui->display) > 0) {
         XEvent xev;
         XNextEvent(ui->display, &xev);
-        
+
         if (xev.type == ClientMessage && (Atom)xev.xclient.data.l[0] == ui->wm_delete_window) {
             ui->quit = true;
         } else if (xev.type == Expose && xev.xexpose.count == 0) {
-            
+
             XWindowAttributes wa;
             XGetWindowAttributes(ui->display, ui->window, &wa);
 
@@ -194,7 +194,7 @@ static int ui_idle(LV2UI_Handle handle) {
             drew = true;
         }
     }
-    
+
     if (drew) {
         XFlush(ui->display);
     }
