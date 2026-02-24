@@ -14,9 +14,11 @@ Projetado para produtores e músicos que, assim como eu, estão cansados de depe
   <img src="./docs/mixer.png" alt="Mixer View">
   <br>
   <img src="./docs/screenshot-ardour.png" alt="MyDrum7 screenshot on Ardour">
+  <br>
+  <img src="./docs/pin-configuration.png" alt="Pin configuration on Ardour">>
 </p>
 
-Este projeto nasceu de uma revolta pessoal. Como usuário de Linux, eu estava frustrado com a falta de opções nativas que entregassem realismo sem exigir configurações complexas de Wine ou bridges VST que "quebram" no meio da sessão.
+**Este projeto nasceu de uma "revolta" pessoal.** Como usuário de Linux, eu estava frustrado com a falta de opções nativas que entregassem realismo sem exigir configurações complexas de Wine ou bridges VST que "quebram" no meio da sessão.
 
 Nós temos o melhor Kernel, o melhor sistema de arquivos e a melhor comunidade. Merecemos instrumentos à altura.
 
@@ -60,13 +62,13 @@ Para obter a melhor mixagem, roteie as saídas do plugin para trilhas de áudio 
 | **1**     | **Kick In**      | Microfone interno do Bumbo (Ataque/Click) |
 | **2**     | **Kick Out**     | Microfone externo do Bumbo (Peso/Sub)     |
 | **3**     | **Snare Top**    | Microfone superior da Caixa               |
-| **4**     | **Snare Bottom** | Microfone da esteira da Caixa             |
+| **4**     | **Snare Bot**    | Microfone da esteira da Caixa             |
 | **5**     | **Hi-Hat**       | Microfone direto do Chimbal               |
-| **6**     | **Rack Tom 1**   | Tom Agudo                                 |
-| **7**     | **Rack Tom 2**   | Tom Médio                                 |
-| **8**     | **Rack Tom 3**   | Tom Grave                                 |
-| **9**     | **Floor Tom 1**  | Surdo 1                                   |
-| **10**    | **Floor Tom 2**  | Surdo 2                                   |
+| **6**     | **Tom 1**        | Microfone direto do Tom 1                 |
+| **7**     | **Tom 2**        | Microfone direto do Tom 2                 |
+| **8**     | **Tom 3**        | Microfone direto do Tom 3                 |
+| **9**     | **Tom 4**        | Microfone direto do Surdo 1               |
+| **10**    | **Tom 5**        | Microfone direto do Surdo 2               |
 | **11-12** | **Overheads**    | Microfones de ambiente (Par Estéreo L/R)  |
 
 ## Mapa MIDI
@@ -84,4 +86,5 @@ Este projeto foi construído sobre ombros de gigantes, utilizando tecnologias op
     * **libsndfile:** Para leitura e decodificação de áudio de alta fidelidade.
 
 ---
+
 *Desenvolvido com amor, ~~ódio~~, e café no Arch Linux.* 🐧
