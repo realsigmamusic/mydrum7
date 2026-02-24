@@ -13,7 +13,6 @@
     lv2:extensionData ui:idleInterface ;
     ui:binary <ui.so> .
 
-
 <http://realsigmamusic.com/plugins/mydrum7>
 	a lv2:Plugin , lv2:InstrumentPlugin ;
 	doap:name "MyDrum7" ;
@@ -22,7 +21,7 @@
 	ui:ui <http://realsigmamusic.com/plugins/mydrum7#ui> ;
 	lv2:requiredFeature urid:map ;
 	lv2:optionalFeature lv2:hardRTCapable ;
-	
+
 	lv2:port [
 		a lv2:InputPort , atom:AtomPort ;
 		lv2:index 0 ;
@@ -33,13 +32,13 @@
 	] ,	
 	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 1 ;  lv2:symbol "out1" ;  lv2:name "Kick In" ] ,
 	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 2 ;  lv2:symbol "out2" ;  lv2:name "Kick Out"] ,
-    [ a lv2:OutputPort , lv2:AudioPort ; lv2:index 3 ;  lv2:symbol "out3" ;  lv2:name "Snare Top" ] ,
-    [ a lv2:OutputPort , lv2:AudioPort ; lv2:index 4 ;  lv2:symbol "out4" ;  lv2:name "Snare Bot" ] ,
-    [ a lv2:OutputPort , lv2:AudioPort ; lv2:index 5 ;  lv2:symbol "out5" ;  lv2:name "Hihat" ] ,
-    [ a lv2:OutputPort , lv2:AudioPort ; lv2:index 6 ;  lv2:symbol "out6" ;  lv2:name "Tom 1" ] ,
-    [ a lv2:OutputPort , lv2:AudioPort ; lv2:index 7 ;  lv2:symbol "out7" ;  lv2:name "Tom 2" ] ,
-    [ a lv2:OutputPort , lv2:AudioPort ; lv2:index 8 ;  lv2:symbol "out8" ;  lv2:name "Tom 3" ] ,
-    [ a lv2:OutputPort , lv2:AudioPort ; lv2:index 9 ;  lv2:symbol "out9" ;  lv2:name "Tom 4" ] ,
-    [ a lv2:OutputPort , lv2:AudioPort ; lv2:index 10 ; lv2:symbol "out10" ; lv2:name "Tom 5" ] ,
-    [ a lv2:OutputPort , lv2:AudioPort ; lv2:index 11 ; lv2:symbol "out11" ; lv2:name "Overhead L" ] ,
-    [ a lv2:OutputPort , lv2:AudioPort ; lv2:index 12 ; lv2:symbol "out12" ; lv2:name "Overhead R" ] .
+	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 3 ;  lv2:symbol "out3" ;  lv2:name "Snare Top" ] ,
+	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 4 ;  lv2:symbol "out4" ;  lv2:name "Snare Bot" ] ,
+	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 5 ;  lv2:symbol "out5" ;  lv2:name "Hihat" ] ,
+	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 6 ;  lv2:symbol "out6" ;  lv2:name "Tom 1" ] ,
+	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 7 ;  lv2:symbol "out7" ;  lv2:name "Tom 2" ] ,
+	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 8 ;  lv2:symbol "out8" ;  lv2:name "Tom 3" ] ,
+	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 9 ;  lv2:symbol "out9" ;  lv2:name "Tom 4" ] ,
+	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 10 ; lv2:symbol "out10" ; lv2:name "Tom 5" ] ,
+	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 11 ; lv2:symbol "out11" ; lv2:name "Overhead L" ] ,
+	[ a lv2:OutputPort , lv2:AudioPort ; lv2:index 12 ; lv2:symbol "out12" ; lv2:name "Overhead R" ] .
